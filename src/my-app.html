@@ -20,10 +20,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="my-icons.html">
+
+<link rel="import" href="/bower_components/iron-iconset-svg/iron-iconset-svg.html">
+
+
+  <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+
+
+  <link rel="import" href="/bower_components/iron-icon/iron-icon.html">
+
+  <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="/bower_components/paper-menu/paper-submenu.html">
+
 
 <dom-module id="my-app">
   <template>
+
     <style>
       :host {
         --app-primary-color: #4285f4;
@@ -34,7 +47,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       app-header {
         color: #fff;
-        background-color: var(--app-primary-color);
+        /*background-color: var(--app-primary-color);*/
+        background-color:#373b50;
       }
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
@@ -56,6 +70,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
+      paper-item{
+
+        display: block;
+padding: 0 16px;
+text-decoration: none;
+color: black;
+line-height: 40px;
+cursor:pointer;
+      }
+
+
+      paper-item a{
+        padding: 0 26px;
+        text-decoration: none;
+        color:black;
+        font-weight:100;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -68,11 +101,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer id="drawer">
-        <app-toolbar>Menu</app-toolbar>
+        <app-toolbar><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> &nbsp;DevTools</app-toolbar>
+
+        <paper-menu>
+  <paper-submenu>
+    <paper-item class="menu-trigger">Topics</paper-item>
+    <paper-menu class="menu-content">
+      <paper-item> <a name="view1" href="/view1"> Angular</a></paper-item>
+      <paper-item><a name="view2" href="/view2">Python</a></paper-item>
+      <paper-item>Topic 3</paper-item>
+    </paper-menu>
+  </paper-submenu>
+  <paper-submenu>
+    <paper-item class="menu-trigger">Faves</paper-item>
+    <paper-menu class="menu-content">
+      <paper-item>Fave 1</paper-item>
+      <paper-item>Fave 2</paper-item>
+    </paper-menu>
+  </paper-submenu>
+  <paper-submenu disabled>
+    <paper-item class="menu-trigger">Unavailable</paper-item>
+    <paper-menu class="menu-content">
+      <paper-item>Disabled 1</paper-item>
+      <paper-item>Disabled 2</paper-item>
+    </paper-menu>
+  </paper-submenu>
+</paper-menu>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">View One</a>
-          <a name="view2" href="/view2">View Two</a>
-          <a name="view3" href="/view3">View Three</a>
+          <a name="view1" href="/view1"> Angular</a>
+          <a name="view2" href="/view2">Python</a>
+          <a name="view3" href="/view3">Polymer</a>
         </iron-selector>
       </app-drawer>
 
@@ -81,8 +139,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>My App</div>
+            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+
+            <div main-title>Section</div>
           </app-toolbar>
         </app-header>
 
