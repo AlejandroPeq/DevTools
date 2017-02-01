@@ -32,7 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="/bower_components/paper-menu/paper-menu.html">
   <link rel="import" href="/bower_components/paper-menu/paper-submenu.html">
-
+<link rel="import" href="bower_components/iron-input/iron-input.html">
 
 <dom-module id="my-app">
   <template>
@@ -78,7 +78,13 @@ padding: 0 16px;
 text-decoration: none;
 color: black;
 line-height: 40px;
-cursor:pointer;
+
+      }
+
+      paper-item:hover{
+
+        background-color: rgba(193, 187, 187, 0.26);
+
       }
 
 
@@ -87,7 +93,39 @@ cursor:pointer;
         text-decoration: none;
         color:black;
         font-weight:100;
+        cursor:pointer;
       }
+
+      .sub{
+        padding-left:40px;
+        text-decoration: none;
+        color:black;
+        font-weight:100;
+        cursor:pointer;
+      }
+
+      my-view1{
+
+        box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+      }
+
+      .flecha{
+
+        float:right;
+
+      }
+
+      .flechaSub{
+        color:#ff9b00;
+        float:right;
+
+      }
+
+      .menu-content{
+
+        box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+      }
+
 
     </style>
 
@@ -104,34 +142,196 @@ cursor:pointer;
         <app-toolbar><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> &nbsp;DevTools</app-toolbar>
 
         <paper-menu>
+
   <paper-submenu>
-    <paper-item class="menu-trigger">Topics</paper-item>
+    <paper-item class="menu-trigger"></iron-icon> Web Aplications <paper-icon-button class="flecha" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
     <paper-menu class="menu-content">
-      <paper-item> <a name="view1" href="/view1"> Angular</a></paper-item>
-      <paper-item><a name="view2" href="/view2">Python</a></paper-item>
-      <paper-item>Topic 3</paper-item>
+    <!--  <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+      <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+        <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>-->
+        <paper-submenu>
+          <paper-item  class="menu-trigger sub"> Languajes <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+          <paper-menu class="menu-content">
+            <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+            <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+          </paper-menu>
+
+
+        </paper-submenu>
+        <paper-submenu>
+          <paper-item  class="menu-trigger sub"> DevTools <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+          <paper-menu class="menu-content">
+            <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+            <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+              <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+          </paper-menu>
+
+
+        </paper-submenu>
+    </paper-menu>
+
+
+  </paper-submenu>
+  <paper-submenu>
+    <paper-item class="menu-trigger"></iron-icon> Native Aplications <paper-icon-button class="flecha" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+    <paper-menu class="menu-content">
+      <paper-submenu>
+        <paper-item  class="menu-trigger sub"> Languajes <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+        <paper-menu class="menu-content">
+          <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+          <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+        </paper-menu>
+
+
+      </paper-submenu>
+      <paper-submenu>
+        <paper-item  class="menu-trigger sub"> DevTools <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+        <paper-menu class="menu-content">
+          <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+          <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+        </paper-menu>
+
+
+      </paper-submenu>
     </paper-menu>
   </paper-submenu>
   <paper-submenu>
-    <paper-item class="menu-trigger">Faves</paper-item>
+    <paper-item class="menu-trigger"></iron-icon> Desktop Aplications <paper-icon-button class="flecha" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
     <paper-menu class="menu-content">
-      <paper-item>Fave 1</paper-item>
-      <paper-item>Fave 2</paper-item>
+      <paper-submenu>
+        <paper-item  class="menu-trigger sub"> Languajes <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+        <paper-menu class="menu-content">
+          <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+          <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+        </paper-menu>
+
+
+      </paper-submenu>
+      <paper-submenu>
+        <paper-item  class="menu-trigger sub"> DevTools <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+        <paper-menu class="menu-content">
+          <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+          <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+        </paper-menu>
+
+
+      </paper-submenu>
     </paper-menu>
   </paper-submenu>
-  <paper-submenu disabled>
-    <paper-item class="menu-trigger">Unavailable</paper-item>
+  <paper-submenu>
+      <paper-item class="menu-trigger"></iron-icon> Databases <paper-icon-button class="flecha" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
     <paper-menu class="menu-content">
-      <paper-item>Disabled 1</paper-item>
-      <paper-item>Disabled 2</paper-item>
+      <paper-submenu>
+        <paper-item  class="menu-trigger sub"> Languajes <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+        <paper-menu class="menu-content">
+          <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+          <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+        </paper-menu>
+
+
+      </paper-submenu>
+      <paper-submenu>
+        <paper-item  class="menu-trigger sub"> DevTools <paper-icon-button class="flechaSub" icon="icons:arrow-drop-down" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button></paper-item>
+        <paper-menu class="menu-content">
+          <paper-item> <a name="view1" href="/view1"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Angular</a> </paper-item>
+          <paper-item><a name="view2" href="/view2"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Python</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Polymer</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> HTML5</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> CSS3</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Javascript</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> JQuery</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> PHP</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Larabel</a></paper-item>
+            <paper-item><a name="polymer" href="/polymer"><iron-icon src="../images/manifest/icon-48x48.png"></iron-icon> Dojo</a></paper-item>
+
+        </paper-menu>
+
+
+      </paper-submenu>
+
     </paper-menu>
   </paper-submenu>
 </paper-menu>
+
+
+<!--
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="view1" href="/view1"> Angular</a>
           <a name="view2" href="/view2">Python</a>
-          <a name="view3" href="/view3">Polymer</a>
+          <a name="view3" href="/view3">AscD</a>
+          <a name="view4" href="/view4">Python</a>
+          <a name="polymer" href="/polymer">Polymer</a>
         </iron-selector>
+-->
       </app-drawer>
 
       <!-- Main content -->
@@ -142,6 +342,21 @@ cursor:pointer;
             <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
 
             <div main-title>Section</div>
+            <!--
+            <nav>
+              <iron-selector class="sections-tabs" attr-for-selected="name" activate-event="">
+                <a href="/1.0/start/" name="1.0/start">Start</a>
+                <a href="/1.0/docs/devguide/feature-overview" name="1.0/docs">Polymer</a>
+                 <a href="/2.0/docs/about_20" name="2.0/docs">2.0 Preview</a> <a href="/1.0/toolbox/" name="1.0/toolbox">App Toolbox</a>
+                 <a href="/1.0/blog/" name="1.0/blog">News</a>
+                  <a href="https://elements.polymer-project.org/" target="_blank" name="catalog">Element Catalog</a>
+              </iron-selector>
+            </nav>
+          -->
+
+            <paper-icon-button icon="search" tabindex="-1" aria-label="Search Polymer site" role="button" aria-disabled="false"></paper-icon-button>
+
+
           </app-toolbar>
         </app-header>
 
@@ -153,6 +368,8 @@ cursor:pointer;
           <my-view1 name="view1"></my-view1>
           <my-view2 name="view2"></my-view2>
           <my-view3 name="view3"></my-view3>
+          <my-view4 name="view4"></my-view4>
+          <my-polymer name="polymer"></my-polymer>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
       </app-header-layout>
